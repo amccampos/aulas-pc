@@ -1,0 +1,413 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>PC- Aula 2</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/sky.css" id="theme">
+  <link rel="stylesheet" href="css/tailwind.min.css">
+	<link rel="stylesheet" href="css/monokai.css" id="highlight-theme">
+	
+  <link rel="stylesheet" href="css/pc.css">
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <div class="my-40">
+          <h3>Pensamento Computacional</h3>
+          <h4>Aula 2</h4>
+        </div>
+        <p>
+          Prof. André Campos<br>
+          Prof. Júlio de Melo
+        </p>
+      </section>
+
+      <section>
+        <h3>Lembretes</h3>
+        <ul>
+          <li class="fragment mb-8">Prazos sempre nas quartas e sextas (100%)
+            <ul class="text-3xl">
+              <li>Prazo adicional até o domingo (50%)</li>
+            </ul>
+          </li>
+          <li class="fragment mb-8">As atividades possuem 3 estados:
+            <ol class="text-3xl">
+              <li>Submetidas corretamente no prazo (100%)</li>
+              <li>Submetidas corretamente fora do prazo (50%)</li>
+              <li>Não feitas / submetidas incorretamente (0%)</li>
+              Então, <span class="has-text-danger-dark">atenção aos retornos!</span>
+            </ol>
+          </li>
+          <li class="fragment">
+            O assunto é condensado nas segundas, mas estamos à disposição <span class="has-text-danger-dark">diariamente</span> para ajudar
+            <ul class="text-3xl">
+              <li>
+                Reservem aproximadamente 2h por dia para as atividades
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Sumário da aula de hoje</h3>
+        <ul>
+          <li class="fragment">Resolução de problemas</li>
+          <li class="fragment">Laços (repetições)</li>
+          <li class="fragment">Sub-rotinas (funções)</li>
+        </ul>
+      </section>
+
+      <section>
+        <section>
+          <h3>
+            Resolução de problemas<br>
+            e<br>
+            Pensamento Computacional
+          </h3>
+        </section>
+        <section>
+          <h3>Habilidades do Pensamento Computacional</h3>
+          <div class="grid grid-cols-2 gap-4 text-gray-100">
+            <div class="bg-blue-500 p-4 rounded-lg">
+              Reconhecimento de padrões
+            </div>
+            <div class="bg-red-500 p-4 rounded-lg">
+              Abstração / Generalização
+            </div>
+            <div class="bg-green-500 p-4 rounded-lg">
+              Decomposição / simplificação
+            </div>
+            <div class="bg-yellow-500 p-4 rounded-lg">
+              Algoritmos
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Problema 1</h3>
+          <p>É possível desenhar a figura abaixo sem tirar a "caneta do papel" desenhando cada linha uma única vez?</p>
+          <svg id="svg.1" class="mx-auto"></svg>
+        </section>
+
+        <section>          
+          <h3>Problema 2</h3>
+          <p>Ainda é possível fazer o mesmo com a figura abaixo?</p>
+          <svg id="svg.2" class="mx-auto"></svg>
+        </section>
+
+        <section>
+          <h3>Problema 3</h3>
+          <p>...e com a figura abaixo?</p>
+          <svg id="svg.3" class="mx-auto"></svg>
+          <p class="fragment">Existe um padrão?</p>
+        </section>
+
+        <section>
+          <h3>Padrão do problema</h3>
+          <div class="grid grid-cols-2 gap-10">
+            <div>
+              <p>É possível</p>
+              <svg id="svg.p0" class="mx-auto"></svg>
+              <svg id="svg.p1" class="mx-auto"></svg>
+              <svg id="svg.p3" class="mx-auto"></svg>
+            </div>
+            <div>
+              <p>Não é possível</p>
+              <svg id="svg.p4" class="mx-auto"></svg>
+              <svg id="svg.p2" class="mx-auto"></svg>
+              <svg id="svg.p5" class="mx-auto"></svg>
+            </div>
+          </div>
+          <p class="fragment">Vértices com número ímpar de arestas > 2</p>
+        </section>
+
+        <section>
+          <h3>Generalização / Abstração</h3>
+          <div class="grid grid-cols-3 gap-10">
+            <div class="col-span-2">
+              <p>Se um padrão funciona para problemas pequenos, é possível que também funcione em...</p>
+              <ul>
+                <li>Problemas maiores</li>
+                <li>Contextos similares</li>
+              </ul>
+            </div>
+            <div>
+              <svg id="svg.g1" class="mx-auto"></svg>
+              <svg id="svg.g2" class="mx-auto"></svg>
+              <svg id="svg.g3" class="mx-auto"></svg>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Decomposição / Simplificação</h3>
+          <div class="grid grid-cols-3 gap-10">
+            <div class="col-span-2">
+              <p>Problemas maiores podem ser reduzidos...</p>
+              <ul>
+                <li>Dividindo-os</li>
+                <li>Simplificando-os</li>
+              </ul>
+            </div>
+            <div>
+              <svg id="svg.d1" class="mx-auto"></svg>
+              <svg id="svg.d2" class="mx-auto"></svg>
+              <svg id="svg.d3" class="mx-auto"></svg>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Algoritmo</h3>
+          <p>Procedimento estruturado para colocar uma ideia de solução em prática</p>
+          <div class="grid grid-cols-3">
+            <div class="col-span-2">
+              <ul class="fragment">
+                <li>Reconhecimento de padrões</li>
+                <li>Generalização</li>
+                <li>Decomposição</li>
+              </ul>
+            </div>
+            <div class="fragment">
+              <svg id="svg.a1" class="mx-auto"></svg>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Pseudo-código</h3>
+          <div class="grid grid-cols-3">
+            <div class="flex flex-col justify-center">
+              <svg id="svg.c1" class="mx-auto"></svg>
+            </div>
+            <pre class="handwrite">
+
+  cima
+  <strong style="color: red;">padrão</strong> (2x)
+  baixo (2x)
+  esquerda (2x)
+  cima
+  <strong style="color: red;">padrão</strong> (2x)
+              </pre>
+            <ul class="fragment">
+              <li>Repetições
+                <ul class="text-3xl">
+                  <li>Repita .. vezes</li>
+                  <li>Repita enquanto</li>
+                  <li>Repita até que</li>
+                  <li>Conte de .. até ..</li>
+                </ul>
+              </li>
+              <li class="mt-10">Decomposições
+                <ul class="text-3xl">
+                  <li>Sub-rotinas</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+      </section>
+
+      <section>
+        <section>
+          <h3>Repetições /Laços</h3>
+          <p class="fragment">
+            Diferentes formas para repetir instruções
+            <br>
+            <span class="text-3xl">Cada uma é adequada a uma situação (apesar da similaridade)</span>
+            <img src="images/lacos.png" class="mx-auto">
+          </p>
+          <p class="fragment">
+            Sempre possuem uma <span class="text-red-700">condição de parada</span>
+            <br>
+            <span class="text-3xl">É de responsabilidade do programador garantir que haverá parada</span>
+            <br>
+            <span class="text-3xl">Atenção ao término do programa</span>
+          </p>
+        </section>
+
+        <section>
+          <img src="images/laco_repita_vezes.png" class="float-right">
+          Repita um <span class="text-red-700">número fixo</span> de vezes
+          <iframe src="https://trinket.io/embed/blocks/9ad28483ee?hideGeneratedCode=true"
+            width="100%" height="600"
+            frameborder="0"
+            marginwidth="0"
+            marginheight="0"
+            allowfullscreen>
+          </iframe>
+        </section>
+      
+        <section>
+          <img src="images/laco_enquanto.png" class="float-right">
+          Repita <span class="text-red-700">enquanto</span> uma condição for verdadeira
+          <iframe src="https://trinket.io/embed/blocks/cb207c569c?hideGeneratedCode=true"
+            width="100%" height="600"
+            frameborder="0"
+            marginwidth="0"
+            marginheight="0"
+            allowfullscreen>
+          </iframe>
+        </section>
+      
+        <section>
+          <img src="images/laco_repita-ateque.png" class="float-right">
+          Repita <span class="text-red-700">até que</span> uma condição for verdadeira
+          <iframe src="https://trinket.io/embed/blocks/7d80813818?hideGeneratedCode=true"
+            width="100%" height="600"
+            frameborder="0"
+            marginwidth="0"
+            marginheight="0"
+            allowfullscreen>
+          </iframe>
+        </section>
+      
+        <section>
+          <img src="images/laco_conte.png" class="float-right">
+          Conte <span class="text-red-700">de um valor até outro</span>
+          <iframe src="https://trinket.io/embed/blocks/5ee30777de?hideGeneratedCode=true"
+            width="100%" height="600"
+            frameborder="0"
+            marginwidth="0"
+            marginheight="0"
+            allowfullscreen>
+          </iframe>
+        </section>
+      
+        <section>
+          <h3>Paradas e reinícios forçados</h3>
+          <p>As condições de parada dos laços são testadas apenas no <span class="text-red-700"> início das iterações</span></p>
+          <p class="fragment">Podemos, entretanto, <span class="text-red-700">voltar ao ínício</span> ou
+            <span class="text-red-700">sair</span> do laço no meio do bloco de comandos.
+            <img src="images//break_continue.png" alt="break_continue" class="mx-auto mt-10">
+          </p>
+          <p class="fragment">São normalmente usados dentro de condicionais.</p>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h3>Sub-rotinas</h3>
+          <p>Funções</p>
+        </section>
+
+
+        <section>
+          <h3>Usos de sub-rotinas / funções</h3>
+          <ol>
+            <li>Decomposição
+              <svg id="svg.f1" class="mb-10"></svg>
+            </li>
+            <li>Transformação
+              <svg id="svg.f2"></svg>
+            </li>
+          </ol>
+          <p class="fragment text-3xl">Como funções matemáticas
+            $$f(x) \Rightarrow 2^x$$
+            $$g(x) \Rightarrow 3f(x) + 4x$$
+          </p>
+        </section>
+
+        <section>
+          <h3>Funções básicas</h3>
+          <p>Não recebem dados (parâmetros), nem retornam dados (retornos)</p>
+          <iframe src="https://trinket.io/embed/blocks/ff9b425249?hideGeneratedCode=true"
+            width="100%" height="400"
+            frameborder="0"
+            marginwidth="0"
+            marginheight="0"
+            allowfullscreen>
+          </iframe>
+        </section>
+
+        <section>
+          <h3>Funções com parâmetro</h3>
+          <p>Dados armazenados em variáveis usadas na função</p>
+          <iframe src="https://trinket.io/embed/blocks/dc49a73a2b?hideGeneratedCode=true"
+            width="100%" height="400"
+            frameborder="0"
+            marginwidth="0"
+            marginheight="0"
+            allowfullscreen>
+          </iframe>
+        </section>
+
+        <section>
+          <h3>Funções com retorno</h3>
+          <p>Realizam cálculos e retornam novos dados</p>
+          <iframe src="https://trinket.io/embed/blocks/41ee9ed85b?hideGeneratedCode=true"
+            width="100%" height="400"
+            frameborder="0"
+            marginwidth="0"
+            marginheight="0"
+            allowfullscreen>
+          </iframe>
+        </section>
+
+        <section>
+          <h3>Funções com procedimentos e retorno</h3>
+          <p>Realizam procedimentos e retornam dados</p>
+          <iframe src="https://trinket.io/embed/blocks/6185827404?hideGeneratedCode=true"
+            width="100%" height="400"
+            frameborder="0"
+            marginwidth="0"
+            marginheight="0"
+            allowfullscreen>
+          </iframe>
+        </section>
+
+        <section>
+          <h3>Funções dentro de funções</h3>
+          <p>Atenção ao término do programa</p>
+          <iframe src="https://trinket.io/embed/blocks/41ee9ed85b?hideGeneratedCode=true"
+            width="100%" height="400"
+            frameborder="0"
+            marginwidth="0"
+            marginheight="0"
+            allowfullscreen>
+          </iframe>
+        </section>
+
+      </section>
+    </div>
+  </div>
+
+  <script src="js/reveal.js"></script>
+  <script src="js/plugin/notes.js"></script>
+  <script src="js/plugin/markdown.js"></script>
+  <script src="js/plugin/highlight.js"></script>
+  <script src="js/plugin/math.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+      math: {
+        mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+        config: 'TeX-AMS_HTML-full',
+      },
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
+    });
+  </script>
+
+  <script src="js/rough.js"></script>
+  <script src="js/draw.js"></script>
+  
+  <script src="js/aula2.js"></script>
+
+</body>
+
+</html>
