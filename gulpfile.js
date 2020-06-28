@@ -287,5 +287,7 @@ gulp.task('serve', () => {
     ], gulp.series('css-core', 'reload'))
 
     gulp.watch(['test/*.html'], gulp.series('test'))
+    gulp.watch(['slides/aula 2/**'])
+    gulp.watch(['slides/aula 3/**'], gulp.series('reload'))
 
 })
