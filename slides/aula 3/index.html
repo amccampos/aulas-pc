@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>PC- Aula 2</title>
+  <title>PC- Aula 3</title>
 
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/reveal.css">
@@ -67,14 +67,14 @@
           <h3>Lembretes</h3>
           <ul>
             <li>Plágios nas solucões <i class="far fa-frown-open"></i>
-              <ul class="text-3xl">
+              <ul class="text-2xl">
                 <li>Por serem descritos por uma linguagem, os códigos de vocês são <b>muito característicos</b></li>
                 <li>Assim, <b>não é difícil</b> para identificarmos plágios</li>
                 <li>No entanto, não punimos plágios de forma rígida, porém <b>sabemos que existem!</b></li>
               </ul>
             </li>
             <li>Mas e se eu não conseguir fazer? Fico com falta?
-              <ol class="text-3xl">
+              <ol class="text-2xl">
                 <li>Escreva até onde conseguiu e submeta no trinket assim mesmo!</li>
                 <li>Para ajudar no feeback, use a parte de comentários e tente descrever sua dificuldade</li>
                 <li>Dedique um tempo para ler os feebacks das questões que enviou</li>
@@ -527,7 +527,6 @@
             </div>
           </div>
         </section>
-
         <section>
           <h3>Comandos Básicos Python</h3>
           <div class="flex mb-4">
@@ -537,6 +536,7 @@
                 <li>Linhas que começam com "#"(comentários) são ignoradas pelo computador</li>
                 <li>Expressões podem ou não termiar em ";"</li>
                 <li>Valores textuais sempre são escritos entre aspas simples ou duplas</li>
+                <li><b><i>input</i> sempre retorna texto</b>, então <b>sempre</b> quando queremos números</li>
                 <li>Para chamar funções sempre usamos "(" e ")" com os parâmetros separados por virgula</li>
                 <li>Podemos usar "(" e ")" para controlar a ordem que as expressões são executadas</li>
               </ul>
@@ -665,7 +665,7 @@
                   elif expressao_2 :
                     comandos_elif
                     comandos_elif
-                  else
+                  else :
                     comandos_else
                     comandos_else
                 </code>
@@ -733,11 +733,7 @@
     // - https://revealjs.com/config/
     Reveal.initialize({
       hash: true,
-      math: {
-        mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
-        config: 'TeX-AMS_HTML-full',
-        transitionSpeed: 'fast',
-      },
+      transitionSpeed: 'fast',
       slideNumber: 'c/t',
       // Learn about plugins: https://revealjs.com/plugins/
       plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
