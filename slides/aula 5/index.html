@@ -1,0 +1,701 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>PC- Aula 5</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/sky.css" id="theme">
+  <link rel="stylesheet" href="css/tailwind.min.css">
+  <link rel="stylesheet" href="css/monokai.css" id="highlight-theme">
+  <link rel="stylesheet" href="lib/fontawesome-5.13.1/css/all.min.css">
+	
+  <link rel="stylesheet" href="css/pc.css">
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <div class="my-40">
+          <h3>Pensamento Computacional</h3>
+          <h4>Aula 5</h4>
+        </div>
+        <p>
+          Prof. André Campos<br>
+          Prof. Júlio de Melo
+        </p>
+      </section>
+
+      <section>
+        <section id="lembretesAvisos">
+          <h2>Lembretes e Avisos</h2>
+        </section>
+
+        <section>
+          <h3>Lembretes</h3>
+          <ul>
+            <li>Aula de Correçao da Lista 1 da semana</i>
+              <ul class="text-2xl">
+                <li>Na quarta começando às 18:30</li>
+                <li>Presença na aula ou acesso ao conteúdo no sigaa rende a presença na terça e quarta da semana corrente</li>
+                <li>Não são aceitas entregas atrasadas da Lista 1</li>
+              </ul>
+            </li>
+            <li>Entrega Atrasadas da Lista 2</i>
+              <ul class="text-2xl">
+                <li>Lembrem que entregas atrasadas ainda valem 50% da nota e a frequencia da semana</li>
+                <li>Se não teve tempo de terminar na semana, submeta atrasado até domingo</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>Avisos</h3>
+          <ul>
+            <li>Preparação para a Entrevista na próxima semana</i>
+              <ul class="text-2xl">
+                <li>Precisaremos que vocês tenham acesso a um computador</li>
+                <li>As entrevistas terão duraçao de 15 minutos</li>
+                <li>Nos encontraremos na segunda no horário de aula para conversar sobre a metodologia de avaliação</li>
+              </ul>
+            </li>
+            <li>Marcação dos horários para Entrevistas</i>
+              <ul class="text-2xl">
+                <li>Datas disponíveis: de terça 21/07 à sexta 24/07</li>
+                <li>Horários disponíveis: das 9:00 às 12:00 / 14:00 às 17:00 / 18:00 às 20:0</li>
+                <li>Marcação de horário via PM com algum professor</li>
+                <li>Não deixem para marcar o horário apenas na próxima semana</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+      </section>
+
+      
+
+      <section>
+        <h3>Sumário da aula de hoje</h3>
+        <ul>
+          <!-- TODO -->
+          <li ><a href="#listas">Listas em Lógica de Programação</a></li>
+          <li ><a href="#listasEmPython">Listas em Python</a></li>
+          <li ><a href="#listasNumericasPython">Listas Numéricas em Python</a></li>
+        </ul>
+      </section>
+
+      <section id="listas">
+        <section >
+          <div class="grid grid-cols-2">
+            <img src="images/shopping_list.png" alt="days-of-week">
+            <div class="flex items-center">
+              <h3>Listas em Lógica de Programação</h3>
+            </div>
+
+          </div>  
+        </section>
+
+        <section>
+          <h3>Listas em Lógica de Programação</h3>
+          <div class="grid grid-cols-2">
+            <div class="col-span-2 text-left">
+              <p class="text-3xl"><b>Problema:</b>Leia N números inteiros do usuário, depois da leitura, imprima todos os números na ordem <b>inversa de leitura</b></p>            
+            </div>
+            <div class="text-left fragment fade-in">
+              <ul class="text-3xl">
+                <li>Solução 1
+                  <ul>
+                    <li>Se sabemos quantos números vão ser lidos, podemos armazenar os números em N variáveis</li>
+                    <li>Usando um contador, podemos testar o contador e usar <b>uma varíavel para cada número</b></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="text-left fragment fade-in">  
+              <h4>Código da Solução 1</h4>
+              <pre><code class="python" data-trim data-noescape>
+                var1, var2, ..., varN = 0, 0, ..., 0
+                for i in range(1,N+1):
+                  if i == 1:
+                    var1 = int(input("valor?"))
+                  if i == 2:
+                    var2 = int(input("valor?"))
+                  ...
+                  if i == N:
+                    varN = int(input("valor?"))
+                #imprima depois começando de varN e terminando em var1                
+              </code></pre>
+            </div>
+          </div>
+        </section>
+        
+        
+        <section>
+          <h3>Listas em Lógica de Programação</h3>
+          <div class="grid grid-cols-2">
+            <div class="col-span-2 text-left">
+              <p class="text-3xl"><b>Problema:</b>Leia N números inteiros do usuário, depois da leitura, imprima todos os números na ordem <b>inversa de leitura</b></p>            
+            </div>
+            <div class="text-left col-span-2">
+              <ul class="text-3xl">
+                <li>Problemas com a solução 1
+                  <ol>
+                    <li >Se o usuário tiver que entrar com o número N, <b>antes da leitura?</b>
+                      <ul class="fragment fade-in">
+                        <li>Podemos estipular um valor máximo para N e usar a Solução 1</li>
+                      </ul>
+                    </li>
+                    <li>Se o valor de N for <b>MUITO</b> grande
+                      <ul class="fragment fade-in">
+                        <li>Podemos <b>escrever um programa</b> para gerar uma variação da Solução 1 que resolve o problema <i class="far fa-smile"></i></li>
+                      </ul>
+                    </li>
+                  </ol>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3>Listas em Lógica de Programação</h3>
+          <div class="grid grid-cols-2">
+            <div class="col-span-2 text-left">
+              <h5>Os reais problemas da Solução:</h5>
+            </div>
+            <div class="text-left col-span-2">
+              <ul class="text-3xl">
+                <li><b>Escalabilidade:</b>
+                  <ul>
+                    <li>Podemos ter vários casos em que precisamos ler <b>e armazenar</b> vários valores em um mesmo problema</li>
+                  </ul>
+                </li>
+                <li><b>Complexidade:</b>
+                  <ul>
+                    <li>Acessar o i-ésimo valor é muito complicado (Embora seja possível usar funções para isso)</li>
+                  </ul>
+                </li>
+                <li><b>Outros?</b>
+                  <ul>
+                    <li><b>Manutenção:</b> atualizar o número N não é uma tarefa simples</li>
+                    <li><b>Flexibilidade:</b> modificar a solução para outros problemas não é fácil</li>
+                    <li><b>Muitos outros!</b></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3>Listas em Lógica de Programação</h3>
+          <div class="grid grid-cols-2">
+            <div class="col-span-2 text-left">
+              <p class="text-3xl">É normal que as linguagens de programação tenham uma solução mais simples para o Problema 1. Essa solução é a utilização de <b>listas:</b></h5>
+            </div>
+            <div class="text-left col-span-2">
+              <ul class="text-3xl">
+                <li><b>Listas em Lógica de Programação:</b>
+                  <ul>
+                    <li>São uma estrutura que nos permitem <b>armazenar e acessar</b> valores</li>
+                    <li>É um <b>tipo</b> de valor que podemos atribuir a uma variável</li>
+                    <li>Em alguns nichos também são chamadas de vetores</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3>Listas em Lógica de Programação</h3>
+          <div class="grid grid-cols-2">
+            <div class="col-span-2 text-left">
+              <p class="text-3xl"><b>Problema:</b>Leia N números inteiros do usuário, depois da leitura, imprima todos os números na ordem <b>inversa de leitura</b></p>            
+            </div>
+            <div class="text-left fragment fade-in">
+              <ul class="text-3xl">
+                <li>Solução Usando Listas
+                  <ul>
+                    <li>Leia o valor de N do usuário</li>
+                    <li>Declare uma lista <b>L</b> com N posições</li>
+                    <li>Leia cada número e armazene em <b>L</b></li>
+                    <li>Imprima os valores de <b>L</b> começando do último até o primeiro</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="text-left fragment fade-in">  
+              <h4>Código da Solução com Listas</h4>
+              <pre><code class="python" data-trim data-noescape>
+                L = []
+                for i in range(N):
+                  var = int(input("valor?"))
+                  L.insert(i,var)
+                for i in range(N):
+                  print(L[N-1-i])
+              </code></pre>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3>Listas em Lógica de Programação</h3>
+          <div class="grid grid-cols-2">
+            <div class="col-span-2 text-left">
+              <p class="text-4xl">Tipos de Listas</p>            
+            </div>
+            <div class="text-left col-span-2">
+              <ul class="text-3xl">
+                <li><b>Listas genéricas</b> ex: ["banana", 2, ["outra lista", 2, 3.0], 5]
+                  <ul class="text-2xl">
+                    <li>Permitem armazenar qualquer <b>Tipo de Dados da linguagem</b>, ao mesmo tempo</li>
+                    <li>Nem sempre suportadas pelas linguagens de programação</li>
+                  </ul>
+                </li>
+                <li><b>Listas tipadas (<u>numéricas</u> ou outras)</b> ex: [1,2,3,4], [0.5,1,0.6], ['a','b','c']
+                  <ul class="text-xl">
+                    <li>Permitem armazenar valores de um certo tipo (numeros inteiros, float, texto outras)</li>
+                    <li>Consideradas um <b>Tipo de Dados Básico</b> suportada por todas as linguagens de programação</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </section>
+      
+      <section id="listasEmPython">
+        <section>
+          <div class="flex mb-4 justify-center">
+            <h2>Listas em Python</h2>
+          </div>
+        </section>
+
+        <section>
+          <h3>Listas em Python</h3>
+          <div class="grid grid-cols-2">
+            <div class="col-span-2 text-left">
+              <p class="text-3xl"><b>Problema:</b>Leia N números inteiros do usuário, depois da leitura, imprima todos os números na ordem <b>inversa de leitura</b></p>            
+            </div>
+            <div class="text-left">
+              <ul class="text-2xl">
+                <li>Já vimos a solução do problema usando python como mostrada ao lado
+                  <ul>
+                    <li class="fragment fade-in" data-fragment-index="0">Declara uma variável L e atribui seu valor a uma <b>Lista Vazia</b></li>
+                    <li class="fragment fade-in" data-fragment-index="1"><b>Insere um elemento</b> na posição i da lista L, primeira posição é sempre o índice 0</li>
+                    <li class="fragment fade-in" data-fragment-index="2"><b>Acessa o elemento</b> na posição N-1-i da lista L</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="text-left px-4">  
+              <h4>Código em Python</h4>
+              <pre><code id="problema1_code" class="python" data-fragment-index="0" data-trim data-noescape data-line-numbers="0|1|4|6">
+                L = []
+                for i in range(N):
+                  var = int(input("valor?"))
+                  L.insert(i,var)
+                for i in range(N):
+                  print(L[N-1-i])           
+              </code></pre>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Listas em Python</h3>
+          <div class="grid grid-cols-2">
+            <div class="col-span-2 text-left">
+              <p class="text-3xl">Estrutura das Listas em Python:</p>
+            </div>
+            <div class="grid col-span-2">
+              <div class="col-span-2">
+                <img src="./images/lists_python.png" alt="python-lists">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Listas em Python</h3>
+          <div class="grid grid-cols-2">
+            <div class="text-left">
+                <ul class="text-2xl">
+                  <li>Listas em python são <b>genéricas</b>
+                    <ul>
+                      <li>Tanto faz usarmos letras, numeros ou qualquer outra coisa como elementos da lista</li>
+                    </ul>
+                  </li>
+                </ul>
+            </div>
+            <div class="text-left">
+              <pre><code class="python" data-trim data-noescape>
+                L1 = [1,2,3] #lista numerica
+                L2 = ["a","b","c"] #lista de letras/caracteres
+                L3 = ["ad","bd","ca"] #lista de palavras
+                L4 = [1,"ad", L3] #lista genérica
+              </code></pre>
+            </div>
+            <div class="text-left fragment" data-fragment-index="0">
+              <ul class="text-2xl">
+                <li>Acessando elementos:
+                  <ul>
+                    <li>Primeira posição é sempre o índice 0</li>
+                    <li>Última posição na lista é o índice N-1 onde N é o tamanho da lista</li>
+                    <li>Podemos acessamos os elementos usando "[]"</li>
+                    <li>Podemos acessar o tamanho das listas usando a função len(lista)</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="text-left fragment" data-fragment-index="0">
+              <pre><code class="python" data-trim data-noescape>
+                v = L[0] #acessa o primeiro elemento da lista
+                v = L[var] #o elemento na posiçao var (var inteiro)
+                tam = len(L1) 
+                v = L[tam-1] #acesa o último elemento da lista
+                v = L[len(L1)-1] #acesa o último elemento da lista
+              </code></pre>
+            </div>
+          </div>
+        </section>
+        
+        <section>
+          <h3>Listas em Python</h3>
+          <div class="grid grid-cols-2">
+            <div class="text-left">
+              <ul class="text-2xl">
+                <li>Para inserir elementos nas listas:
+                  <ul>
+                    <li>Podemos acessar a posição usando "[]" e inserir diretamente*</li>
+                    <li>Podemos usar a função insert(pos,valor)</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="text-left">
+              <pre><code class="python" data-trim data-noescape>
+                L[0] = 1 #atribui o valor 1 ao elemento 0 da lista (elemento precisa existir previamente)
+                L.insert(3,var) #insere o elemento var na posiçao 3 da lista (elemento NÃO precisa existir previamente)
+                L[len(L) - 1] = 10 #atribui o valor 1 ao último elemento da lista (elemento precisa existir previamente)
+              </code></pre>
+            </div>
+            <div class="text-left fragment" data-fragment-index="1">
+                <ul class="text-2xl">
+                  <li>Podemos usar listas como argumentos e retornos de funções</b>
+                    <ul>
+                      <li>Como em python não existem tipos das variáveis, apenas declaramos um parâmetro e passamos uma lista <b>na chamada</b> da função</li>
+                      <li>Para retornar uma lista apenas use o comando return com a lista desejada</li>
+                    </ul>
+                  </li>
+                </ul>
+            </div>
+            <div class="text-left fragment" data-fragment-index="1">
+              <pre><code class="python" data-trim data-noescape>
+                def imprimeLista(lista):
+                  for i in range(len(lista)):
+                    print ("elemento [" + i + "] = " + lista[i])
+                def criaLista(elemento1, elemento2):
+                  return [elemento1, elemento2]
+                L = ["eu", "eu mesmo", "nós"]
+                imprimeLista(L)
+                imprimeLista([1, 2, 3, 5, 7])
+                L2 = criaLista("e1","e2")
+                imprimeLista(L)
+              </code></pre>
+            </div>
+        </section>
+
+        <section>
+          <h3>Listas em Python</h3>
+          <div class="grid grid-cols-2">
+            <div class="text-left">
+              <ul class="text-2xl">
+                <li><b>Iterando</b> nos elementos de uma lista:
+                  <ul>
+                    <li>Classicamente é usado o loop <b>for</b></li>
+                    <li>Podemos usar duas formas: iterar diretamente no elemento ou usar os índice</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="text-left">
+              <pre><code class="python" data-trim data-noescape>
+                L1 = [1,"ad", L3] #lista genérica
+                for i in L1: # imprime os elementos da lista
+                  print(str(i))
+                for i in range(3): # imprime os elementos da lista usando os índices
+                  print(str(L3[i]))
+              </code></pre>
+            </div>
+            <div class="col-span-2 fragment">
+              <img src="images/list_iterating.gif">
+            </div>
+        </section>
+
+        <section>
+          <div class="grid grid-cols-2">
+            <div class="text-center col-span-2">
+              <h3>Listas em Python</h3>
+              <h4>Exemplos básicos com Código</h4>
+            </div>
+            <div class="col-span-2">
+              <div id="iframe1_div" class="iframe bg-blue-200 relative flex items-center justify-center">
+                <pre><code class="python" data-trim data-noescape>
+                  import random
+                  L1 = [1,2,3] #lista numerica
+                  L2 = ["a","b","c"] #lista de letras/caracteres
+                  L3 = ["ad","bd","ca"] #lista de palavras
+                  L4 = [1,"ad", L3] #lista genérica
+
+                  for i in L1: # imprime os elementos da lista
+                    print(str(i))
+
+                  for i in range(3): # imprime os elementos da lista usando os índices
+                    print(str(L3[i]))
+
+                  var = 2
+                  L = range(10)
+                  v = L[0] #acessa o primeiro elemento da lista
+                  print("valor de v " + str(v))
+                  v = L[var] #o elemento na posiçao var (var inteiro)
+                  print("valor de v " + str(v))
+                  tam = len(L) 
+                  print("Tamanho da lista L é " + str(tam))
+                  v = L[tam-1] #acesa o último elemento da lista
+                  print("valor de v" + str(v))
+
+                  L[0] = 1 #atribui o valor 1 ao elemento 0 da lista (elemento precisa existir previamente)
+                  for i in range(tam): # imprime os elementos da lista usando os índices
+                    print("Elemento indice " + str(i) + " é " + str(L[i]))
+
+                  print("\n")
+                  L.insert(3,var) #insere o elemento var na posiçao 3 da lista (elemento NÃO precisa existir previamente)
+                  for i in range(tam): # imprime os elementos da lista usando os índices
+                    print("Elemento indice " + str(i) + " é " + str(L[i]))
+                    
+                  print("\n")
+                  L[len(L) - 1] = 10 #atribui o valor 1 ao último elemento da lista (elemento precisa existir previamente)
+                  for i in range(tam): # imprime os elementos da lista usando os índices
+                    print("Elemento indice " + str(i) + " é " + str(L[i]))
+                    
+                  ### usando funções
+
+                  def imprimeLista(lista): #recebe uma lista e imprime seus valores de forma customizada
+                    for i in range(len(lista)):
+                      print ("elemento [" + str(i) + "] = " + str(lista[i]))
+
+                  #também podemos retornar listas
+                  def criaListaAleatoria(tamanho, min, max): #cria uma lista com números aleatorios entre min e max
+                    L = []
+                    for i in range(tamanho):
+                      val=random.randint(min,max)
+                      L.insert(i,val)
+                    return L
+
+                  L = ["eu", "eu mesmo", "nós"]
+                  print("Imprimindo Lista L")
+                  imprimeLista(L)
+                  print("Imprimindo Lista [1, 2, 3, 5, 7]")
+                  imprimeLista([1, 2, 3, 5, 7])
+                  print("Imprimindo Lista L2")
+                  L2 = criaListaAleatoria(10, -10,30)
+                  imprimeLista(L2)      
+                </code></pre>
+                <div class="absolute top-0 right-0 w-1/6 bg-white">
+                  <img onclick="loadIframe('https:\/\/trinket.io/embed/python/d63c417df7', '#iframe1_div')" class="cursor-pointer object-scale-down" src="images/trinket_logo.png">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section id="listasNumericasPython">
+        <section>
+          <div class="flex mb-4 justify-center">
+            <h2>Listas numéricas em Python</h2>
+          </div>
+        </section>
+        <section>
+          <h3>Listas numéricas em Python</h3>
+          <div class="grid grid-rows-2">
+            <div class="text-left">
+              <ul>
+                <li>Embora as listas em python sejam genéricas nosso curso apenas focará no uso de <b>lista numéricas</b>
+                </li>
+                <li>Alguns motivos:
+                  <ul>
+                    <li>Listas Numéricas são úteis em vários problemas da matemática e da computação</li>
+                    <li>A lógica com listas numéricas é trasnferível para outras listas</li>
+                    <li>Listas Numéricas <b>são suportadas por todas as linguagens de programação</b></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        
+        <section>
+          <h3>Listas numéricas em Python</h3>
+          <div class="grid grid-cols-2">
+            <div class="text-left col-span-2">
+              <p class="text-2xl"><b>Problema:</b> Escreva um programa que calcule a média de uma <b>lista de números</b> dados pelo usuário e depois imprima quais os números maiores e quais o menores ou iguais à media</p>
+            </div>
+            <div class="col-span-2">
+              <div id="iframe2_div" class="iframe bg-blue-200 relative pb-10 flex items-center justify-center">
+                <pre><code class="python" data-trim data-noescape>
+                  numeros = []
+                  N = int(input("Quantos elementos?"))
+                  media = 0
+                  for i in range(N):
+                    val = int(input("valor?"))
+                    media = media + val/N #calcula a média
+                    numeros.insert(i,val)
+
+                  #imprime os números maiores do que a média
+                  print("Maiores que a média")
+                  for i in range(len(numeros)): #usando indices
+                    if numeros[i] > media:
+                      print (numeros[i])
+                      
+                  print("Menores que a média")
+                  for i in numeros: #usando elementos2
+                    if i <= media:
+                      print (numeros[i])    
+                </code></pre>
+                <div class="absolute top-0 right-0 w-1/6 bg-white">
+                  <img onclick="loadIframe('https:\/\/trinket.io/embed/python/27a52abc9b', '#iframe2_div')" class="cursor-pointer self-center" src="images/trinket_logo.png">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Listas numéricas em Python</h3>
+          <div class="grid grid-cols-2">
+            <div class="text-left col-span-2">
+              <p class="text-2xl"><b>Problema:</b> Escreva uma função que desenha um polígono dada sua <b>lista de pontos</b></p>
+            </div>
+            <div class="col-span-2">
+              <div id="iframe3_div" class="iframe bg-blue-200 relative pb-10 flex items-center justify-center">
+                <pre><code class="python" data-trim data-noescape>
+                  import turtle
+                  #desenha um poligno com a lista de pontos contendo todos os seus x e y
+                  def desenhaPoligono(pontos):
+                    turtle.penup()
+                    turtle.goto(pontos[0], pontos[1]) #x0, y0
+                    turtle.pendown()
+                    print("ponto 0: (" + str(pontos[0]) + "," + str(pontos[1]) + ")")
+                    for i in range(2,len(pontos),2):
+                      print("ponto " + str((i//2)) + ": (" + str(pontos[i]) + "," + str(pontos[i+1]) + ")")
+                      turtle.goto(pontos[i], pontos[i+1])
+                    turtle.goto(pontos[0], pontos[1])
+
+                  #lista de pontos no formato x0, y0, x1, y1 ... xn-1, yn-1
+                  p1=[40, 30, 20, 50, 10, 10, 50,10, 70, 30]
+                  desenhaPoligono(p1)
+                  #p2=[30, 50, -10, 50, -10, 20, 30, 10, 20, 30, 70, 30]
+                  #desenhaPoligono(p2)
+                  #p3=[50, 40, 20, 60, -10, 30, -10, -10, 60, -10, 70, 10, 70, 40]
+                  #desenhaPoligono(p3)
+                  #p3=[50, 40, 20, 60, -10, 30, -10, -10, 60, -10, 70, 10, 70, 40]       
+                </code></pre>
+                <div class="absolute top-0 right-0 w-1/6 bg-white">
+                  <img onclick="loadIframe('https:\/\/trinket.io/embed/python/294221fc5c', '#iframe3_div')" class="cursor-pointer self-center" src="images/trinket_logo.png">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section>
+          <h3>Listas numéricas em Python</h3>
+          <div class="grid grid-cols-2">
+            <div class="text-left col-span-2">
+              <p class="text-2xl"><b>Problema:</b> Leia do usuário um número N e gere aleatóriamente um conjunto com N numeros entre 0 e 20, depois imprima os números do conjunto na ordem crescente</p>
+            </div>
+            <div class="col-span-2">
+              <div id="iframe4_div" class="iframe bg-blue-200 relative pb-10 flex items-center justify-center">
+                <pre><code class="python" data-trim data-noescape>
+                  import random
+
+                  #troca os elementos: vetor[pos1] = vetor[pos2] e vetor[pos2]=vetor[pos1]
+                  def trocaElementos(pos1, pos2, vetor):
+                    aux = vetor[pos1]
+                    vetor[pos1] = vetor[pos2]
+                    vetor[pos2] = aux
+
+                  N = int(input("Qual o Tamanho?"))
+
+                  vetor = []
+
+                  for i in range(N):
+                    vetor.insert(i, random.randint(0,20))
+
+                  print("Vetor desordenado")
+                  print(vetor)
+
+                  for i in range(N):
+                    elemento = vetor[i]
+                    for j in range(i,N): #ordena a posição atual do vetor
+                      if elemento > vetor[j]: #testa se o elemento atual é menor do que os outros do vetor
+                        elemento = vetor[j] #quarda o menor elemento como sendo o elemento atualmente testado
+                        trocaElementos(i,j,vetor)
+
+                  print("Vetor ordenado")
+                  print(vetor)            
+                </code></pre>
+                <div class="absolute top-0 right-0 w-1/6 bg-white">
+                  <img onclick="loadIframe('https:\/\/trinket.io/embed/python/04be2a1e8e', '#iframe4_div')" class="cursor-pointer self-center" src="images/trinket_logo.png">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      
+
+      <section id="theEnd">
+        <div class="flex-col items-center justify-center">
+          <h3>The End</h3>
+          <div class="flex items-center justify-center pb-10">
+              <img src="images/the-end.jpg" alt="A python meme">
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="js/reveal.js"></script>
+  <script src="js/plugin/notes.js"></script>
+  <script src="js/plugin/markdown.js"></script>
+  <script src="js/plugin/highlight.js"></script>
+  <script src="js/plugin/math.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+      transitionSpeed: 'fast',
+      slideNumber: 'c/t',
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
+    });
+  </script>
+
+  <script type="text/javascript" src="lib/jquery/jquery.1.6.0.min.js"></script>
+  <script src="js/rough.js"></script>
+  
+  <script src="js/aula.js"></script>
+  <script scr="llb/fontawesome-5.13.1/js/all.min.js"></script>
+
+</body>
+
+</html>
