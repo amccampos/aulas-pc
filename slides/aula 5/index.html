@@ -40,7 +40,7 @@
         <section>
           <h3>Lembretes</h3>
           <ul>
-            <li>Aula de Correçao da Lista 1 da semana</i>
+            <li>Aula de Correção da Lista 1 da semana</i>
               <ul class="text-2xl">
                 <li>Na quarta começando às 18:30</li>
                 <li>Presença na aula ou acesso ao conteúdo no sigaa rende a presença na terça e quarta da semana corrente</li>
@@ -49,7 +49,7 @@
             </li>
             <li>Entrega Atrasadas da Lista 2</i>
               <ul class="text-2xl">
-                <li>Lembrem que entregas atrasadas ainda valem 50% da nota e a frequencia da semana</li>
+                <li>Lembrem que entregas atrasadas ainda valem 50% da nota e a frequência da semana</li>
                 <li>Se não teve tempo de terminar na semana, submeta atrasado até domingo</li>
               </ul>
             </li>
@@ -61,7 +61,7 @@
             <li>Preparação para a Entrevista na próxima semana</i>
               <ul class="text-2xl">
                 <li>Precisaremos que vocês tenham acesso a um computador</li>
-                <li>As entrevistas terão duraçao de 15 minutos</li>
+                <li>As entrevistas terão duração de 15 minutos</li>
                 <li>Nos encontraremos na segunda no horário de aula para conversar sobre a metodologia de avaliação</li>
               </ul>
             </li>
@@ -112,7 +112,7 @@
                 <li>Solução 1
                   <ul>
                     <li>Se sabemos quantos números vão ser lidos, podemos armazenar os números em N variáveis</li>
-                    <li>Usando um contador, podemos testar o contador e usar <b>uma varíavel para cada número</b></li>
+                    <li>Usando um contador, podemos testar o contador e usar <b>uma variável para cada número</b></li>
                   </ul>
                 </li>
               </ul>
@@ -255,9 +255,9 @@
                     <li>Nem sempre suportadas pelas linguagens de programação</li>
                   </ul>
                 </li>
-                <li><b>Listas tipadas (<u>numéricas</u> ou outras)</b> ex: [1,2,3,4], [0.5,1,0.6], ['a','b','c']
+                <li><b>Listas <i>tipadas</i> (<u>numéricas</u> ou outras)</b> ex: [1,2,3,4], [0.5,1,0.6], ['a','b','c']
                   <ul class="text-xl">
-                    <li>Permitem armazenar valores de um certo tipo (numeros inteiros, float, texto outras)</li>
+                    <li>Permitem armazenar valores de um certo tipo (números inteiros, float, texto outras)</li>
                     <li>Consideradas um <b>Tipo de Dados Básico</b> suportada por todas as linguagens de programação</li>
                   </ul>
                 </li>
@@ -333,7 +333,7 @@
             </div>
             <div class="text-left">
               <pre><code class="python" data-trim data-noescape>
-                L1 = [1,2,3] #lista numerica
+                L1 = [1,2,3] #lista numérica
                 L2 = ["a","b","c"] #lista de letras/caracteres
                 L3 = ["ad","bd","ca"] #lista de palavras
                 L4 = [1,"ad", L3] #lista genérica
@@ -354,7 +354,7 @@
             <div class="text-left fragment" data-fragment-index="0">
               <pre><code class="python" data-trim data-noescape>
                 v = L[0] #acessa o primeiro elemento da lista
-                v = L[var] #o elemento na posiçao var (var inteiro)
+                v = L[var] #o elemento na posição var (var inteiro)
                 tam = len(L1) 
                 v = L[tam-1] #acesa o último elemento da lista
                 v = L[len(L1)-1] #acesa o último elemento da lista
@@ -379,7 +379,7 @@
             <div class="text-left">
               <pre><code class="python" data-trim data-noescape>
                 L[0] = 1 #atribui o valor 1 ao elemento 0 da lista (elemento precisa existir previamente)
-                L.insert(3,var) #insere o elemento var na posiçao 3 da lista (elemento NÃO precisa existir previamente)
+                L.insert(3,var) #insere o elemento var na posição 3 da lista (elemento NÃO precisa existir previamente)
                 L[len(L) - 1] = 10 #atribui o valor 1 ao último elemento da lista (elemento precisa existir previamente)
               </code></pre>
             </div>
@@ -446,7 +446,7 @@
               <div id="iframe1_div" class="iframe bg-blue-200 relative flex items-center justify-center">
                 <pre><code class="python" data-trim data-noescape>
                   import random
-                  L1 = [1,2,3] #lista numerica
+                  L1 = [1,2,3] #lista numérica
                   L2 = ["a","b","c"] #lista de letras/caracteres
                   L3 = ["ad","bd","ca"] #lista de palavras
                   L4 = [1,"ad", L3] #lista genérica
@@ -461,7 +461,7 @@
                   L = range(10)
                   v = L[0] #acessa o primeiro elemento da lista
                   print("valor de v " + str(v))
-                  v = L[var] #o elemento na posiçao var (var inteiro)
+                  v = L[var] #o elemento na posição var (var inteiro)
                   print("valor de v " + str(v))
                   tam = len(L) 
                   print("Tamanho da lista L é " + str(tam))
@@ -470,17 +470,17 @@
 
                   L[0] = 1 #atribui o valor 1 ao elemento 0 da lista (elemento precisa existir previamente)
                   for i in range(tam): # imprime os elementos da lista usando os índices
-                    print("Elemento indice " + str(i) + " é " + str(L[i]))
+                    print("Elemento índice " + str(i) + " é " + str(L[i]))
 
                   print("\n")
-                  L.insert(3,var) #insere o elemento var na posiçao 3 da lista (elemento NÃO precisa existir previamente)
+                  L.insert(3,var) #insere o elemento var na posição 3 da lista (elemento NÃO precisa existir previamente)
                   for i in range(tam): # imprime os elementos da lista usando os índices
-                    print("Elemento indice " + str(i) + " é " + str(L[i]))
+                    print("Elemento índice " + str(i) + " é " + str(L[i]))
                     
                   print("\n")
                   L[len(L) - 1] = 10 #atribui o valor 1 ao último elemento da lista (elemento precisa existir previamente)
                   for i in range(tam): # imprime os elementos da lista usando os índices
-                    print("Elemento indice " + str(i) + " é " + str(L[i]))
+                    print("Elemento índice " + str(i) + " é " + str(L[i]))
                     
                   ### usando funções
 
@@ -489,7 +489,7 @@
                       print ("elemento [" + str(i) + "] = " + str(lista[i]))
 
                   #também podemos retornar listas
-                  def criaListaAleatoria(tamanho, min, max): #cria uma lista com números aleatorios entre min e max
+                  def criaListaAleatoria(tamanho, min, max): #cria uma lista com números aleatórios entre min e max
                     L = []
                     for i in range(tamanho):
                       val=random.randint(min,max)
@@ -530,7 +530,7 @@
                 <li>Alguns motivos:
                   <ul>
                     <li>Listas Numéricas são úteis em vários problemas da matemática e da computação</li>
-                    <li>A lógica com listas numéricas é trasnferível para outras listas</li>
+                    <li>A lógica com listas numéricas é <b>trasnferível</b> para outras listas</li>
                     <li>Listas Numéricas <b>são suportadas por todas as linguagens de programação</b></li>
                   </ul>
                 </li>
